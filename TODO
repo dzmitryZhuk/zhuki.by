@@ -1,0 +1,2 @@
+- restrict access to admin by IP
+- set up basic protection against bots via reCAPTCHA in the application form
