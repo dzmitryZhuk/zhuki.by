@@ -1,21 +1,20 @@
-version: "3.8"
 services:
   backend:
     build: ./backend
     ports:
-      - "5000:5000"
+      - "${PORT_BACKEND}:${PORT_BACKEND}"
+    env_file:
+      - .env
     volumes:
       - ./backend:/app
-    environment:
-      - NODE_ENV=development
 
   frontend:
     build: ./frontend
     ports:
-      - "3000:3000"
+      - "${PORT_FRONTEND}:${PORT_FRONTEND}"
+    env_file:
+      - .env
     depends_on:
       - backend
     volumes:
       - ./frontend:/app
-    environment:
-      - NODE_ENV=development
